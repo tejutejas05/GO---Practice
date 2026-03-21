@@ -37,7 +37,15 @@ func main() {
 //	210f          /* Illegal: no decimal or exponent */
 //	.e55          /* Illegal: missing integer or fraction */
 
+	const A  = "hello jev"
+	var B = "Hi Tej"
 
+	//Concat the strings
+	var c = A + " " + B
+	fmt.Println(c)
 
+	//WE can also the compare the string in the Println() Only
+	fmt.Println(A == "hello jev")
+	fmt.Println(B > A)
 
 }
