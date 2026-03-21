@@ -2,6 +2,10 @@ package main
 
 import ("fmt")
 
+func getting_numbers() (int, int, int) {
+	return 23, 34 ,45
+}
+
 
 func main() {
 
@@ -28,16 +32,23 @@ func main() {
 	//fmt.Println(tejas , jevita , prashi)
 
 	//Declaring the Multiple variables in a Same Type
-	var a,b,c int = 1,2,3
-	fmt.Printf(" %v , %T \n", a ,a)
-	fmt.Printf(" %v , %T \n", b ,b)
-	fmt.Printf(" %v , %T \n", c ,c)
+	//var a,b,c int = 1,2,3
+	//fmt.Printf(" %v , %T \n", a ,a)
+	//fmt.Printf(" %v , %T \n", b ,b)
+	//fmt.Printf(" %v , %T \n", c ,c)
 
 	//Declaring the Multiple variables in a Diferent Type
-	var d,e,f = 1,"tejas",3.14
-	fmt.Printf(" %v , %T \n", d ,d)
-	fmt.Printf(" %v , %T \n", e ,e)
-	fmt.Printf(" %v , %T \n", f ,f)
+	//var d,e,f = 1,"tejas",3.14
+	//fmt.Printf(" %v , %T \n", d ,d)
+	//fmt.Printf(" %v , %T \n", e ,e)
+	//fmt.Printf(" %v , %T \n", f ,f)
+
+
+	//Multiple Return values from a Function
+	a,b,c := getting_numbers()
+	fmt.Println(a)
+	fmt.Println(b)
+	fmt.Println(c)
 
 
 }
