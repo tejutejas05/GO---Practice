@@ -3,10 +3,11 @@ package main
 import "fmt"
 
 func main(){
-	tejas()
+	var value string = "Hi from tejas"
+	tejas(value)
 }
 
 //Decalring the new functions and calling it in the main function 
-func tejas(){
-	fmt.Println("hello from the tejas")
+func tejas(value string){ //With argument 
+	fmt.Println(value)
 }
