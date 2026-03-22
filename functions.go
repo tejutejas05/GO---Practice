@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "errors"
 
 func main(){
 	var value string = "Hi from tejas"
@@ -8,9 +9,14 @@ func main(){
 	// The variables which are used in the intDiv func have been declared in the main function 
 	var num int = 10
 	var den int = 5
-	var result, rem int = intDiv(num,den)
-	fmt.Printf("%v is the divison integer and %v is the remiander" , result, rem)
-
+	var result, rem, err int = intDiv(num,den)
+//	if err!=nil{
+//		fmt.Printf(err.Error())
+//	}else if rem == 0{
+//		fmt.Printf("the result of the integer divison is %v", result)
+//	}else{
+//		fmt.Printf("%v is the divison integer and %v is the remiander" , result, rem)
+//	}
 
 }
 
@@ -20,7 +26,12 @@ func tejas(value string){ //With argument
 }
 
 //Division function (which returns the multiple value)
-func intDiv(num int , den int) (int, int) {
+func intDiv(num int , den int) (int, int, error) {
+	var err error 
+	if den==0{
+		err = errors.New("cannot divide by zero")
+		return 0,0,err
+	}
 	var result int = num/den
 	var rem int = num%den
 	return result, rem
