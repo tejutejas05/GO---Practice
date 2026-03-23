@@ -22,6 +22,8 @@ func main() {
 		fmt.Println("You can play the game")
 	}
 
+	score := 0
+
 	fmt.Printf("Which is the better programming language: GO or Python --> ")
 
 	var answer string
@@ -33,9 +35,12 @@ func main() {
 	// Conditions to check the if answer is correct or not
 	if answer == "GO"{
 		fmt.Println("Correct Answer!!")
+		score++
 	} else{
 		fmt.Println("Wrong answer")
 	}
 
+
+	fmt.Printf("the score you scored is %v \n ", score)
 }
 
