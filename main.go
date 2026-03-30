@@ -71,12 +71,14 @@ func updateStudent(w http.ResponseWriter, r *http.Request){
 		// check for the params id 
 		if item.ID == params["id"]{
 			students = append(students[:index], students[index+1:]...)				// here , if id is matched then we have to first delete the matched id,
-			var student Student														// and then the new data is added to the same id 
+																					// and then the new data is added to the same id 
+
+			var student Student														//from here the creating the student will start 
 			_ = json.NewDecoder(r.Body).Decode(&student)
 			student.ID = params["id"]
 			students = append(students, student)
 			json.NewEncoder(w).Encode(student)
-			return
+			return														// here the program will stop 
 		}
 	}
 
