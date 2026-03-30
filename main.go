@@ -62,12 +62,16 @@ func createStudent(w http.ResponseWriter, r *http.Request){
 
 
 func updateStudent(w http.ResponseWriter, r *http.Request){
+	//which type we have define first
 	w.Header().Set("Content-Type", "application/json")
+	// then we have to take the params id where that will be in the "http://localhost/8000/students/1234/"
 	params := mux.Vars(r)
+	// go through the loop in the students 
 	for index, item := range students{
+		// check for the params id 
 		if item.ID == params["id"]{
-			students = append(students[:index], students[index+1:]...)
-			var student Student
+			students = append(students[:index], students[index+1:]...)				// here , if id is matched then we have to first delete the matched id,
+			var student Student														// and then the new data is added to the same id 
 			_ = json.NewDecoder(r.Body).Decode(&student)
 			student.ID = params["id"]
 			students = append(students, student)
