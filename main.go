@@ -34,7 +34,7 @@ func deleteStudent(w http.ResponseWriter, r *http.Request){
 	params := mux.Vars(r)
 	for index, item := range students {
 		if item.ID == params["id"]{
-			students = append(students[:index], students[index+1:]...) //Main logic
+			students = append(students[:index], students[index+1:]...) //Main logic of the Delete the student
 			break
 		}
 	}
