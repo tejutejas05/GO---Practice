@@ -10,8 +10,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Here we have not used the Database as we have craeted the type Struct
+
 type Student struct{
-	ID string `json:"id"`
+	ID string `json:"id"`												// Json format 
 	Usn string `json:"usn"`
 	Name string `json:"name"`
 	Department *Department `json:"department"`
@@ -90,7 +92,10 @@ func main(){
 	students = append(students, Student{ID: "1", Usn: "23cd055", Name: "Tejas", Department: &Department{Dept_id: "ds01", Dept_name: "Data Science"}})
 	students = append(students, Student{ID: "2", Usn: "23cd020", Name: "Lord", Department: &Department{Dept_id: "ds01", Dept_name: "Data Science"}})
 
+	// This are the handlers functions 
+	// this will be the syntax of the Handler function 
 
+	
 	r.HandleFunc("/students/", getStudents).Methods("GET")
 	r.HandleFunc("/students/{id}/", getStudentsByID).Methods("GET")
 	r.HandleFunc("/students/", createStudent).Methods("POST")
